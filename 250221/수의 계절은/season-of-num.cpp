@@ -11,7 +11,7 @@ int main() {
         cout << "Summer" << endl;
     else if (9 <= m && m <= 11)
         cout << "Fall" << endl;
-    else if (1 <= m && m <= 2 || m == 12)
+    else if ((1 <= m && m <= 2) || m == 12)
         cout << "Winter" << endl;
     
     return 0;
