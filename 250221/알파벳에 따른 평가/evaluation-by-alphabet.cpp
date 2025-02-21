@@ -21,7 +21,7 @@ int main() {
         cout << "Effort" << endl;
     
     else
-        cout << "Faliure" << endl;
-        
+        cout << "Failure" << endl;
+
     return 0;
 }
