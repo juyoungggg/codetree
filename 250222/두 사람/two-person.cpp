@@ -11,6 +11,9 @@ int main() {
 
     if ((a_age >= 19 && a_gender == 'M') || (b_age >= 19 && b_gender == 'M'))
         cout << 1 << endl;
+    
+    else
+        cout << 0 << endl;
 
     return 0;
 }
