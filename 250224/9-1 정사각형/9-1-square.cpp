@@ -9,7 +9,8 @@ int main() {
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             cout << cnt;
-            if (cnt < 0)
+            cnt--;
+            if (cnt < 1)
                 cnt = 9;
         }
         cout << endl;
