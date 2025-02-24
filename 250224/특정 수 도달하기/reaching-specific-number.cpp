@@ -7,7 +7,7 @@ int main() {
     int sum = 0, cnt = 0;
     for (int i = 0; i < 10; i++) {
         cin >> arr[i];
-        if (arr[i] < 250) {
+        if (i == 0 || arr[i] < 250) {
             sum += arr[i];
             cnt++;
         }
@@ -15,6 +15,6 @@ int main() {
             break;
     }
     cout << sum << ' ' << (double)(sum) / cnt << endl;
-    
+
     return 0;
 }
