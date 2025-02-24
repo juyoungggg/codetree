@@ -10,7 +10,7 @@ int main() {
         for (int j = 0; j < i + 1; j++) {
             cout << (char)('A' + cnt);
             cnt++;
-            if (cnt == 32)
+            if (cnt == 26)
                 cnt = 0;
         }
         cout << endl;
