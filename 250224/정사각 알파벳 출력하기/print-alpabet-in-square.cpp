@@ -5,11 +5,10 @@ int main() {
     int n;
     cin >> n;
 
-    char c = 'A';
     int cnt = 0;
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
-            cout << (char)(c + cnt);
+            cout << (char)('A' + cnt);
             cnt++;
         }
         cout << endl;
