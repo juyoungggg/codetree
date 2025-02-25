@@ -5,17 +5,19 @@ int main() {
     int n;
     cin >> n;
 
-    int arr[1000 + 1] = {0, };
+    int cnt[1000 + 1] = {0, };
     int num;
-    for (int i = 0 ; i < n; i++) {
+    for (int i = 0; i < n; i++) {
         cin >> num;
-        arr[num]++;
+        cnt[num]++;
     }
 
     int max = -1;
     for (int i = 1000; i >= 1; i--)
-        if (arr[i] == 1)
+        if (cnt[i] == 1) {
             max = i;
+            break; //*
+        }
 
     cout << max << endl;
 
