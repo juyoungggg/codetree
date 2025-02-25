@@ -9,12 +9,11 @@ int main() {
     for (int i = 0; i < n; i++)
         cin >> arr[i];
 
-    int buy = 1, sell = 0;
-    int max = arr[1] - arr[0];
+    int max = 0;
 
     for (int i = 0; i < n; i++) {
         for (int j = i + 1; j < n; j++)
-            if (arr[j] - arr[i] > max) {
+            if (max < arr[j] - arr[i]) {
                 max = arr[j] - arr[i];
             }
     }
