@@ -18,6 +18,6 @@ int main() {
             }
     }
 
-    cout << (max > 0 ? max : 0) << endl;
+    cout << max << endl;
     return 0;
 }
