@@ -15,13 +15,13 @@ int main() {
             arr[j]++;
     }
 
-    int max_idx = 1;
+    int max = 0;
     for (int i = 2; i <= 100 + OFFSET; i++) {
-        if (arr[max_idx] < arr[i])
-            max_idx = i;
+        if (max < arr[i])
+            max = arr[i];
     }
 
-    cout << arr[max_idx] << endl;
+    cout << max << endl;
 
     return 0;
 }
