@@ -25,7 +25,10 @@ int main() {
         ans += d2;
     }
     else if (m1 == m2) {
-        ans += (d2 - d1);
+        if (d1 <= d2)
+            ans += (d2 - d1);
+        else if (d1 > d2)
+            ans += (d1 - d2);
     }
 
     cout << yoil[ans % 7] << endl;
