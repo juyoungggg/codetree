@@ -8,13 +8,10 @@ int main() {
     int hours = a;
     int mins = b;
 
-    int ans = 0;
+    int cnt = 0;
 
-    while (1) {
-        if (hours == c && mins == d)
-            break;
-        
-        ans++;
+    while (!(hours == c && mins == d)) {
+        cnt++;
         mins++;
 
         if (mins == 60) {
@@ -23,7 +20,7 @@ int main() {
         }
     }
 
-    cout << ans << endl;
+    cout << cnt << endl;
 
     return 0;
 }
