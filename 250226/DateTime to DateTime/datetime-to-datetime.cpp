@@ -2,12 +2,12 @@
 using namespace std;
 
 int main() {
-    int month = 11, day = 11, hour = 11, min = 11;
+    int day = 11, hour = 11, min = 11;
 
     int a, b, c;
     cin >> a >> b >> c;
     
-    if (a < 11 || b < 11 || b <= 11 && c < 11) { // 시간이 앞선 경우
+    if (a < 11 || a <= 11 && b < 11 || a <= 11 && b <= 11 && c < 11) { // 시간이 앞선 경우
         cout << -1 << endl;
         return 0;
     }
@@ -31,6 +31,6 @@ int main() {
         }
     }
     cout << elapsed_min << endl;
-    
+
     return 0;
 }
