@@ -17,7 +17,7 @@ int main() {
 
     int max = 0;
     for (int i = 2; i <= 100 + OFFSET; i++) {
-        if (max < arr[i])
+        if (max <= arr[i])
             max = arr[i];
     }
 
