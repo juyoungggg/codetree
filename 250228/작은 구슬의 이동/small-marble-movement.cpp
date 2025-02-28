@@ -24,7 +24,7 @@ int main() {
     cin >> n >> t;
     cin >> r >> c >> d;
     
-    int coords[n][n] = {0, };
+    int coords[n][n] = {};
     int x = r, y = c;
 
     char dir = d;
