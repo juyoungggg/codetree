@@ -8,7 +8,7 @@ int main() {
     int n;
     cin >> n;
 
-    if (n > str.length())
+    if (n >= str.length())
         for (int i = str.length() - 1; i >= 0; i--)
             cout << str[i];
     else
