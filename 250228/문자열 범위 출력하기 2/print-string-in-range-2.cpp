@@ -8,8 +8,12 @@ int main() {
     int n;
     cin >> n;
 
-    for (int i = str.length() - 1; i > str.length() - 1 - n; i--)
-        cout << str[i];
+    if (n > str.length())
+        for (int i = str.length() - 1; i >= 0; i--)
+            cout << str[i];
+    else
+        for (int i = str.length() - 1; i > str.length() - 1 - n; i--)
+            cout << str[i];
 
     cout << endl;
     return 0;
