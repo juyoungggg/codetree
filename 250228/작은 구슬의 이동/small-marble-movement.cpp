@@ -1,11 +1,11 @@
 #include <iostream>
 using namespace std;
 
-bool InRange(int x, int y, int n) { return ((0 <= x && x < n) && (0 <= y && y < n)); }
+bool InRange(int x, int y, int n) { return ((0 < x && x < n) && (0 < y && y < n)); }
 
-int GetDirection(char a) { // char형 방향 정보를 int로 변환시켜주는 함수 (0~3)
+int GetDirection(char d) { // char형 방향 정보를 int로 변환시켜주는 함수 (0~3)
     int n;
-    switch (a) {
+    switch (d) {
         case 'R': n = 0; break;
         case 'D': n = 1; break;
         case 'U': n = 2; break;
@@ -27,17 +27,20 @@ int main() {
     int coords[n][n] = {};
     int x = r, y = c;
 
-    char dir = d;
-    int move_dir = GetDirection(dir); // direction char2int
+    int dir = GetDirection(d); // direction char2int
 
-    for (int i = 0; i <= t; i++) {
-        int nx = x + dx[move_dir], ny = y + dy[move_dir];
-        if (!InRange(nx, ny, n))
-            move_dir = 3 - move_dir;
+    for (int i = 0; i < t; i++) {
+        int nx = x + dx[dir], ny = y + dy[dir];
+        if (!InRange(nx, ny, n)) {
+            dir = 3 - dir;
+            // 방향 전환에 1초 소요
+        }
         
-        x = x + dx[move_dir];
-        y = y + dy[move_dir];
-
+        else {
+            x = x + dx[dir];
+            y = y + dy[dir];
+            // 방향 전환 필요 없을 시 그냥 이동
+        }
     }
     cout << x << ' ' << y << endl;
 
