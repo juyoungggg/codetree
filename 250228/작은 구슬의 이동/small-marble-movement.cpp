@@ -24,7 +24,7 @@ int main() {
     cin >> n >> t;
     cin >> r >> c >> d;
     
-    int coords[n][n] = {};
+    int coords[n][n] = {0, };
     int x = r, y = c;
 
     int dir = GetDirection(d); // direction char2int
