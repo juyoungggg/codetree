@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-bool InRange(int x, int y, int n) { return ((0 < x && x < n) && (0 < y && y < n)); }
+bool InRange(int x, int y, int n) { return ((0 < x && x <= n) && (0 < y && y <= n)); }
 
 int GetDirection(char d) { // char형 방향 정보를 int로 변환시켜주는 함수 (0~3)
     int n;
