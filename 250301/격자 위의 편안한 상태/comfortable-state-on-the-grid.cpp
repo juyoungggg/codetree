@@ -1,15 +1,13 @@
 #include <iostream>
 using namespace std;
 
-int dx[4] = { 0, 1, 0, -1 };
-int dy[4] = { -1, 0, 1, 0 };
-int n, m;
-
-// 편안한 상태: 색칠된 칸 주변의 격자 내 색칠된 칸이 (최대 4칸 중) 정확히 3칸인 상태
-
-bool InRange(int x, int y) { return ((1 <= x && x <= n) && (1 <= y && y <= n)); }
+bool InRange(int x, int y, int n) { return ((1 <= x && x <= n) && (1 <= y && y <= n)); }
 
 int main() {
+    int dx[4] = { 0, 1, 0, -1 };
+    int dy[4] = { -1, 0, 1, 0 };
+
+    int n, m;
     cin >> n >> m;
 
     int arr[n][n] = {};
@@ -21,7 +19,7 @@ int main() {
         for (int j = 0; j < 4; j++) {
             nx = x + dx[j];
             ny = y + dy[j];
-            if (InRange(nx, ny) && arr[nx][ny] == 1)
+            if (InRange(nx, ny, n) && arr[nx][ny] == 1)
                 cnt++;
         }
         if (cnt == 3)
