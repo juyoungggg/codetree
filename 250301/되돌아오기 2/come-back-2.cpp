@@ -13,10 +13,15 @@ int main() {
 
     int cnt = 0;
     for (int i = 0; i < s.length(); i++) {
-        switch (s[i]) {
-            case 'F': x += dx[dir]; y += dy[dir]; break;
-            case 'L': dir = (dir - 1 + 4) % 4; break;
-            case 'R': dir = (dir + 1) % 4; break;
+        if (s[i] == 'F') {
+            x += dx[dir];
+            y += dy[dir];
+        }
+        else if (s[i] == 'L') {
+            dir = (dir - 1 + 4) % 4;
+        }
+        else if (s[i] == 'R') {
+            dir = (dir + 1) % 4;
         }
         cnt++;
 
