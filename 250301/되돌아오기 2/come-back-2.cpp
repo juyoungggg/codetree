@@ -13,19 +13,12 @@ int main() {
 
     int cnt = 0;
     for (int i = 0; i < s.length(); i++) {
-        if (s[i] == 'F') {
-            x += dx[dir];
-            y += dy[dir];
-            cnt++;
+        switch (s[i]) {
+            case 'F': x += dx[dir]; y += dy[dir]; break;
+            case 'L': dir = (dir - 1 + 4) % 4; break;
+            case 'R': dir = (dir + 1) % 4; break;
         }
-        else if (s[i] == 'L') {
-            dir = (dir - 1 + 4) % 4;
-            cnt++;
-        }
-        else if (s[i] == 'R') {
-            dir = (dir + 1) % 4;
-            cnt++;
-        }
+        cnt++;
 
         if (x == 0 && y == 0) {
             cout << cnt << endl;
