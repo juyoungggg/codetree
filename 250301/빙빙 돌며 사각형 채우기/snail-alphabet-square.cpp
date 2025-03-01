@@ -12,11 +12,16 @@ bool InRange(int x, int y) { return ((0 <= x && x < n) && (0 <= y && y < m)); }
 int main() {
     cin >> n >> m;
 
+    int cnt = 0;
     char arr[n][m] = {};
-    arr[x][y] = (char)(0 + 'A');
+    arr[x][y] = (char)(cnt + 'A');
     
     int nx, ny;
     for (int i = 1; i < n * m; i++) {
+        cnt++;
+        if (cnt == 26)
+            cnt = 0;
+            
         nx = x + dx[dir];
         ny = y + dy[dir];
 
@@ -25,7 +30,7 @@ int main() {
         
         x += dx[dir];
         y += dy[dir];
-        arr[x][y] = (char)(i + 'A');
+        arr[x][y] = (char)(cnt + 'A');
     }
 
     for (int i = 0; i < n; i++) {
