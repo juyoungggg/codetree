@@ -8,17 +8,17 @@ int main() {
     char arr[10000 + 1] = {};
     int loc;
     char sign;
-    int max_idx = 0;
+    // int max_idx = 0;
 
     for (int i = 0; i < n; i++) {
         cin >> loc >> sign;
         arr[loc] = sign;
-        if (max_idx < loc)
-            max_idx = loc;
+        // if (max_idx < loc)
+        //     max_idx = loc;
     }
 
     int sum = 0, max = 0;
-    for (int i = 1; i <= max_idx - k; i++) {
+    for (int i = 1; i <= 10000 - k; i++) {
         sum = 0;
         for (int j = i; j <= i + k; j++) {
             if (arr[j] == 'G')
