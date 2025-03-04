@@ -33,7 +33,7 @@ int main() {
     for (int i = 0; i < m; i++) {
         cin >> r >> c;
         arr[r][c] = 1;
-        cout << (Comfort(r, c) ? 1 : 0) << endl;
+        cout << Comfort(r, c) << endl;
     }
     
     return 0;
