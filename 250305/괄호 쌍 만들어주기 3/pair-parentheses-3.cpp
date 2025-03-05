@@ -8,9 +8,12 @@ int main() {
     
     int cnt = 0;
     for (int i = 0; i < s.length(); i++) {
-        for (int j = i + 1; j < s.length(); j++)
-            if (s[i] == '(' && s[j] == ')')
-                cnt++;
+        if (s[i] == '(') {
+            for (int j = i + 1; j < s.length(); j++)
+                if (s[j] == ')') {
+                    cnt++;
+                }
+        }
     }
 
     cout << cnt << endl;
