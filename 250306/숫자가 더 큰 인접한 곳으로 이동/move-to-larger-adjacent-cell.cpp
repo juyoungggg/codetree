@@ -35,7 +35,7 @@ int main() {
         for (int i = 0; i < 4; i++) {
             int nx = x + dx[i];
             int ny = y + dy[i];
-            if (arr[nx][ny] > arr[x][y]) {
+            if (InRange(nx, ny) && arr[nx][ny] > arr[x][y]) {
                 x = x + dx[i];
                 y = y + dy[i];
                 break;
