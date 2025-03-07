@@ -11,7 +11,6 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> candy >> basket;
         arr[basket] += candy;
-
     }
 
     int sum, max = INT_MIN;
@@ -19,7 +18,7 @@ int main() {
         sum = 0;
         for (int j = c - k; j <= c + k; j++)
             sum += arr[j];
-        if (max <= sum)
+        if (max < sum)
             max = sum;
     }
     
