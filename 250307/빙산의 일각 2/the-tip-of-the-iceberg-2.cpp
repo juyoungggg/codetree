@@ -15,7 +15,7 @@ int main() {
     
     int cnt, max = 0;
     for (int i = 1; i <= maxheight; i++) {
-        cnt = 1;
+        cnt = 0;
         for (int j = 0; j < n; j++)
             if (arr[j] > 0)
                 arr[j]--;
@@ -24,10 +24,13 @@ int main() {
         //     cout << arr[j] << endl;
         // cout << endl;
 
-        for (int j = 0; j < n - 1; j++)
-            if (arr[j] != 0 && arr[j + 1] == 0)
+        for (int j = 1; j < n; j++)
+            if (arr[j] == 0 && arr[j - 1] != 0)
                 cnt++;
         
+        if (arr[n - 1] != 0)
+            cnt++;
+
         if (max < cnt)
             max = cnt;
     }
