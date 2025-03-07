@@ -1,4 +1,5 @@
 #include <iostream>
+#include <climits>
 using namespace std;
 
 int main() {
@@ -13,12 +14,12 @@ int main() {
 
     }
 
-    int sum, max = 0;
+    int sum, max = INT_MIN;
     for (int c = k; c <= 100 - k; c++) {
         sum = 0;
         for (int j = c - k; j <= c + k; j++)
             sum += arr[j];
-        if (max < sum)
+        if (max <= sum)
             max = sum;
     }
     
