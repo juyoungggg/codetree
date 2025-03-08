@@ -1,5 +1,4 @@
 #include <iostream>
-#include <algorithm>
 using namespace std;
 
 int main() {
@@ -13,15 +12,22 @@ int main() {
         arr[basket] += candy;
     }
 
-    int sum, maxval = 0;
-    for (int c = min(k, 100 - k); c <= max(k, 100 - k); c++) {
-        sum = 0;
-        for (int j = c - k; j <= c + k; j++)
-            sum += arr[j];
-        if (maxval < sum)
-            maxval = sum;
+    int sum, ans = 0;
+    if (k <= 50) {
+        for (int c = k; c <= 100 - k; c++) {
+            sum = 0;
+            for (int j = c - k; j <= c + k; j++)
+                sum += arr[j];
+            if (ans < sum)
+                ans = sum;
+        }
     }
-    
-    cout << maxval << endl;
+
+    else if (k > 50) {
+        for (int i = 0; i < 100; i++)
+            ans += arr[i];
+    }
+
+    cout << ans << endl;
     return 0;
 }
