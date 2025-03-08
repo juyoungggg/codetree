@@ -13,7 +13,7 @@ int main() {
     }
 
     int sum, ans = 0;
-    if (k <= 50) {
+    if (k < 50) {
         for (int c = k; c <= 100 - k; c++) {
             sum = 0;
             for (int j = c - k; j <= c + k; j++)
@@ -23,7 +23,7 @@ int main() {
         }
     }
 
-    else if (k > 50) {
+    else if (k >= 50) {
         for (int i = 0; i < 100; i++)
             ans += arr[i];
     }
