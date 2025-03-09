@@ -31,7 +31,7 @@ int block_2(int x, int y) {
     for (int k = 1; k <= 2; k++) {
         nx_1 = x + dx[k], ny_1 = y + dy[k];
         nx_2 = x + dx[k] * 2, ny_2 = y + dy[k] * 2;
-        if (InRange(nx_2, ny_2))
+        if (InRange(nx_1, ny_1) && InRange(nx_2, ny_2))
             maxval = max(maxval, arr[x][y] + arr[nx_1][ny_1] + arr[nx_2][ny_2]);
     }
     return maxval;
