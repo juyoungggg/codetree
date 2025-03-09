@@ -21,6 +21,9 @@ int main() {
             for (int j = 1; j < n; j++) {
                 if (arr[i][j] == arr[i][j - 1])
                     cnt++;
+                else
+                    cnt = 1;
+                
                 if (cnt == m) {
                     ans++;   
                     break;
@@ -33,6 +36,9 @@ int main() {
             for (int i = 1; i < n; i++) {
                 if (arr[i - 1][j] == arr[i][j])
                     cnt++;
+                else
+                    cnt = 1;
+                
                 if (cnt == m) {
                     ans++;
                     break;
@@ -40,6 +46,7 @@ int main() {
             }
         }
     }
+    
     cout << ans << endl;
     return 0;
 }
