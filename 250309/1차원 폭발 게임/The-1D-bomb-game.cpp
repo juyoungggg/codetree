@@ -18,7 +18,7 @@ int main() {
             break;
         if (arr[i - 1] == arr[i])
             cnt++;
-        else if (arr[i - 1] != arr[i] && cnt >= m) {
+        else if (arr[i - 1] != arr[i] && cnt >= m || i == n && cnt >= m) {
             for (int j = i - cnt; j < i; j++)
                 arr[j] = 0;
             
