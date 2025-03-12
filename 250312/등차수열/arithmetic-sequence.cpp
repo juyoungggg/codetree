@@ -20,14 +20,15 @@ int main() {
             minval = arr[i];
     }
 
-    int ans = 0;
-    for (int i = 0; i < n; i++) {
-        for (int j = i + 1; j < n; j++) {
-            for (int k = minval; k <= maxval; k++)
+    int cnt, ans = 0;
+    for (int k = minval; k <= maxval; k++) {
+        cnt = 0;
+        for (int i = 0; i < n; i++)
+            for (int j = i + 1; j < n; j++)
                 if ((arr[j] - k) == (k - arr[i]))
-                    ans++;
-        }
-
+                    cnt++;
+        if (ans < cnt)
+            ans = cnt;
     }
     cout << ans << endl;
     
