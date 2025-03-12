@@ -6,7 +6,7 @@ int dx[8] = { -1, -1, 0, 1, 1, 1, 0, -1};
 int dy[8] = {0, 1, 1, 1, 0, -1, -1, -1 };
 
 int n, m;
-int arr[4][4] = {};
+int arr[20][20] = {};
 
 bool InRange(int x, int y) { return ((0 <= x && x < n) && (0 <= y && y < n)); }
 
@@ -18,7 +18,7 @@ int main() {
             cin >> arr[i][j];
 
     for (int time = 0; time < m; time++) {
-        for (int num = 1; num <= 16; num++) {
+        for (int num = 1; num <= n * n; num++) {
             int x, y, maxval;
             for (int i = 0; i < n; i++)
                 for (int j = 0; j < n; j++)
