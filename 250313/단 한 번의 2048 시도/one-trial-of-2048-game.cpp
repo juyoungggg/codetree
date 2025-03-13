@@ -55,30 +55,6 @@ void Up() {
     for (int j = 0; j < 4; j++) {
         int tmp_size = 0;
         int tmp[4] = {};
-        for (int i = 3; i >= 0; i--)
-            if (arr[i][j] != 0)
-                tmp[tmp_size++] = arr[i][j];
-        
-        for (int i = 1; i < tmp_size; i++) {
-            if (tmp[i - 1] == tmp[i]) {
-                tmp[i - 1] *= 2;
-                for (int k = i; k < tmp_size - 1; k++)
-                    tmp[k] = tmp[k + 1];
-                tmp[tmp_size - 1] = 0;
-            }
-        }
-
-        for (int i = 0; i < tmp_size; i++)
-            arr[3 - i][j] = tmp[i];
-        for (int i = tmp_size; i < 4; i++)
-            arr[3 - i][j] = tmp[i];
-    }
-}
-
-void Down() {
-    for (int j = 0; j < 4; j++) {
-        int tmp_size = 0;
-        int tmp[4] = {};
         for (int i = 0; i < 4; i++)
             if (arr[i][j] != 0) 
                 tmp[tmp_size++] = arr[i][j];
@@ -96,6 +72,30 @@ void Down() {
             arr[i][j] = tmp[i];
         for (int i = tmp_size; i < 4; i++)
             arr[i][j] = 0;
+    }
+}
+
+void Down() {
+    for (int j = 0; j < 4; j++) {
+        int tmp_size = 0;
+        int tmp[4] = {};
+        for (int i = 3; i >= 0; i--)
+            if (arr[i][j] != 0)
+                tmp[tmp_size++] = arr[i][j];
+        
+        for (int i = 1; i < tmp_size; i++) {
+            if (tmp[i - 1] == tmp[i]) {
+                tmp[i - 1] *= 2;
+                for (int k = i; k < tmp_size - 1; k++)
+                    tmp[k] = tmp[k + 1];
+                tmp[tmp_size - 1] = 0;
+            }
+        }
+
+        for (int i = 0; i < tmp_size; i++)
+            arr[3 - i][j] = tmp[i];
+        for (int i = tmp_size; i < 4; i++)
+            arr[3 - i][j] = tmp[i];
     }
 }
 
