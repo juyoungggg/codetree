@@ -35,9 +35,3 @@ int main() {
     cout << ans << endl;
     return 0;
 }
-
-/*
-141
-1411
-11411
-*/
