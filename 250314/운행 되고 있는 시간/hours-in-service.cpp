@@ -15,17 +15,18 @@ int main() {
         cin >> a >> b;
         arr1[i] = a;
         arr2[i] = b;
-        for (int j = a; j < b; j++)
+        for (int j = a; j <= b; j++)
             work[j]++;
     }
 
     int cnt, maxval = 0;
     for (int i = 1; i <= n; i++) {
         cnt = 0;
-        for (int j = arr1[i]; j < arr2[i]; j++)
+        for (int j = arr1[i]; j <= arr2[i]; j++)
             work[j]--;
         for (int j = 1; j <= 1000; j++)
-            cnt += work[j];
+            if (work[j] > 0)
+                cnt++;
         maxval = max(cnt, maxval);
     }
 
