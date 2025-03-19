@@ -39,6 +39,8 @@ int main() {
             if (days >= 0)
                 break;
         }
+        if (m2 < m1 && d2 < d1)
+            days++;
     }
     
 
