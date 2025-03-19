@@ -12,7 +12,10 @@ int main() {
 
     int days = 1; // 월요일
 
-    if (m1 <= m2 && d1 <= d2) {
+    if (m1 == m2 && d1 == d2)
+        days = 1;
+
+    else if (m1 <= m2 && d1 <= d2) {
         days += (month[m1] - d1);
         // cout << days << endl;
         for (int i = m1 + 1; i < m2; i++)
