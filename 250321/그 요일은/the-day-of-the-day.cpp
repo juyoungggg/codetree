@@ -14,12 +14,13 @@ int CheckYoil(string s) {
     else if (s == "Fri") return 4;
     else if (s == "Sat") return 5;
     else if (s == "Sun") return 6;
+    else return -1;
 }
 
 int TotalDays(int m, int d) {
     int days = 0;
     for (int i = 1; i < m; i++)
-        days += days_in_month[m];
+        days += days_in_month[i];
     days += d;
     return days;
 }
