@@ -24,7 +24,7 @@ int main() {
     for (int i = 0; i < n; i++) 
         cin >> arr[i];
 
-    int sum, ans = INT_MIN;
+    int sum, ans = -1;
     for (int i = 0; i < n - 2; i++) {
         for (int j = i + 1; j < n - 1; j++) {
             if (CarryCheck(arr[i], arr[j]))
