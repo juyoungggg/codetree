@@ -27,18 +27,15 @@ int main() {
     int sum, ans = INT_MIN;
     for (int i = 0; i < n - 2; i++) {
         for (int j = i + 1; j < n - 1; j++) {
-            if (CarryCheck(i, j))
+            if (CarryCheck(arr[i], arr[j]))
                 continue;
             for (int k = j + 1; k < n; k++) {
-                if (CarryCheck(i + j, k))
+                if (CarryCheck(arr[i] + arr[j], arr[k]))
                     continue;
                 else {
-                    sum = i + j + k;
+                    sum = arr[i] + arr[j] + arr[k];
                     ans = max(sum, ans);
-                    if (ans == sum)
-                        cout << i << ' ' << j << ' ' << k << endl;
                 }
-                
             }
         }
     }
