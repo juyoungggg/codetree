@@ -12,7 +12,7 @@ bool RowCheck(int x, int y, int n) {
 }
 
 bool ColCheck(int x, int y, int n) {
-    if (arr[x + 1][y] == n && arr[x + 2][y] == n && arr[x + 3][y] == n && arr[x + 4][n])
+    if (arr[x + 1][y] == n && arr[x + 2][y] == n && arr[x + 3][y] == n && arr[x + 4][y] == n)
         return true;
     return false;
 }
@@ -34,20 +34,20 @@ int main() {
         for (int j = 0; j < 19; j++)
             cin >> arr[i][j];
     
-    for (int i = 0; i < 19 - 5; i++)
-        for (int j = 0; j < 19 - 5; j++) {
+    for (int i = 0; i < 19; i++)
+        for (int j = 0; j < 19; j++) {
             if (arr[i][j] != 0) {
-                if (RowCheck(i, j, arr[i][j])) {
+                if (j <= 14 && RowCheck(i, j, arr[i][j])) {
                     cout << arr[i][j] << endl;
                     cout << i + 1 << ' ' << j + 2 + 1 << endl;
                     return 0;
                 }
-                else if (ColCheck(i, j, arr[i][j])) {
+                else if (i <= 14 && ColCheck(i, j, arr[i][j])) {
                     cout << arr[i][j] << endl;
                     cout << i + 2 + 1 << ' ' << j + 1 << endl;
                     return 0;
                 }
-                else if (DiagCheck1(i, j, arr[i][j])) {
+                else if (i <= 14 && j <= 14 && DiagCheck1(i, j, arr[i][j])) {
                     cout << arr[i][j] << endl;
                     cout << i + 2 + 1 << ' ' << j + 2 + 1 << endl;
                     return 0;
