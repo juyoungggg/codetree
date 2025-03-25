@@ -16,13 +16,12 @@ int main() {
     for (int i = 0; i < n; i++) {
         dis = 0;
         for (int j = i; j < i + n; j++)
-            for (int k = 0; k < n; k++)
-                dis += arr[j % n] * k;
+            dis += arr[j % n] * (j - i);
         
         ans = min(dis, ans);
     }
 
-    cout << ans << enld;
+    cout << ans << endl;
 
     return 0;
 }
