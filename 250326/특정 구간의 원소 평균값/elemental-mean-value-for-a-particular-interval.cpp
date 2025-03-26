@@ -9,14 +9,15 @@ int main() {
     for (int i = 0; i < n; i++)
         cin >> arr[i];
 
-    int sum, avg;
+    int sum;
+    double avg;
     int ans = 0;
     for (int i = 0; i < n; i++)
         for (int j = i; j < n; j++) {
             sum = 0;
             for (int k = i; k <= j; k++)
                 sum += arr[k];
-            avg = sum / (j - i + 1);
+            avg = (double)sum / (j - i + 1);
             for (int k = i; k <= j; k++)
                 if (avg == arr[k]) {
                     ans++;
@@ -24,6 +25,6 @@ int main() {
                 }
         }
             
-    cout << ans << enld;
+    cout << ans << endl;
     return 0;
 }
