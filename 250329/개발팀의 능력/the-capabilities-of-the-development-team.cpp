@@ -30,7 +30,7 @@ int main() {
         for (int b = 0; b < 5; b++) {
             if (b == a)
                 continue;
-            for (int c = 0; c <= 5; c++) {
+            for (int c = 0; c < 5; c++) {
                 if (c == a || c == b)
                     continue;
                 ans = min(ans, get_diff(a, b, c));
