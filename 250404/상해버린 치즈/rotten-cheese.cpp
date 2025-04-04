@@ -31,8 +31,8 @@ int main() {
                     meds++;
                     // cout << p[j] << ' ' << m[j] << ' ' << t[j] << endl;
                 }
-                else if (sick[p[j]] < t[j] + 1)
-                    break;
+                // else if (sick[p[j]] < t[j] + 1)
+                //     break;
             }
         }
         // if (meds < sick.size())
