@@ -29,10 +29,10 @@ int main() {
             if (m[j] == i) {
                 if ((sick[p[j]] >= t[j] + 1) || (sick[p[j]] == 0)) {
                     meds++;
-                    // cout << p[j] << ' ' << m[j] << ' ' << t[j] << endl;
+                    cout << p[j] << ' ' << m[j] << ' ' << t[j] << endl;
                 }
-                // else if (sick[p[j]] < t[j] + 1)
-                //     break;
+                else if (sick[p[j]] < t[j] + 1)
+                    continue;
             }
         }
         // if (meds < sick.size())
