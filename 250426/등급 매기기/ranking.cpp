@@ -9,6 +9,6 @@ int main() {
     else if (n >= 80) cout << "B" << endl;
     else if (n >= 70) cout << "C" << endl;
     else if (n >= 60) cout << "D" << endl;
-    else Cout << "F" << endl;
+    else cout << "F" << endl;
     return 0;
 }
