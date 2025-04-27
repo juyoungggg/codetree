@@ -10,7 +10,8 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> a >> b;
         for (int j = a; j <= b; j++)
-            arr[i] += j;
+            if (j % 2 == 0)
+                arr[i] += j;
     }
 
     for (int i = 0; i < n; i++)
