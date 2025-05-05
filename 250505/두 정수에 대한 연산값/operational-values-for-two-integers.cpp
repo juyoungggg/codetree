@@ -4,7 +4,7 @@ using namespace std;
 void Modify(int &a, int &b) {
     if (a > b) {
         a += 25;
-        b *+ 2;
+        b *= 2;
     }
     else {
         a *= 2;
