@@ -27,7 +27,7 @@ int main() {
     Credentials c2 = Credentials(id, level);
 
     cout << "user " << c1.getID() << " lv " << c1.getLevel() << endl;
-    cout << "user " << c2.getID() << " lv " << c2.getLevel()` << endl;
+    cout << "user " << c2.getID() << " lv " << c2.getLevel() << endl;
 
     return 0;
 }
