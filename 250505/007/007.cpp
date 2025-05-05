@@ -7,7 +7,6 @@ public:
     string code;
     char location;
     int time;
-    Covert();
     Covert(string code, char location, int time);
 };
 
