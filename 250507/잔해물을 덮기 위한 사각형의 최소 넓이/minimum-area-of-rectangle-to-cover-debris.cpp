@@ -18,6 +18,9 @@ int main() {
             if (arr[i][j] == 1)
                 arr[i][j] = 0;
 
+    // 1. minx, miny, maxx, maxy 구한다
+    // 2. (maxx + 1 - minx) * (maxy + 1 - miny) 구한다
+
     int min_x, min_y, max_x, max_y;
     min_x = min_y = INT_MAX;
     max_x = max_y = INT_MIN;
@@ -29,7 +32,14 @@ int main() {
                 if (min_y > j) min_y = j;
                 if (max_y < j) max_y = j;
             }
+    // cout << min_x << ' ' << max_x << endl;
+    // cout << min_y << ' ' << max_y << endl;
 
-    cout << (max_x - min_x + 1) * (max_y - min_y + 1) << endl;
+    if (min_x == INT_MAX && min_y == INT_MAX && max_x == INT_MIN && max_y == INT_MIN)
+        cout << 0 << endl;
+
+    else
+        cout << (max_x - min_x + 1) * (max_y - min_y + 1) << endl;
+
     return 0;
 }
