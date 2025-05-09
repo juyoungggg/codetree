@@ -9,13 +9,25 @@ int main() {
     int cnt = 0, maxcnt = 0;
     for (int i = 0; i < n; i++) {
         cin >> arr[i];
-        cnt++;
-        if (i == 0 || arr[i] != arr[i - 1]) {
+        if (i == 0)
+            cnt = 1;
+        else if (arr[i] != arr[i - 1]) {
             maxcnt = maxcnt < cnt ? cnt : maxcnt;
-            cnt = 0;
+            cnt = 1;
         }
+        else if (arr[i] == arr[i - 1])
+            cnt++;
     }
 
+    maxcnt = maxcnt < cnt ? cnt : maxcnt;
     cout << maxcnt << endl;
     return 0;
 }
+
+/*
+4
+3
+3
+3
+3
+*/
