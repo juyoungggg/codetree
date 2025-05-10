@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
 int main() {
@@ -13,16 +14,16 @@ int main() {
     
     for (int i = 0; i < m; i++)
         cin >> b[i];
+    sort(b, b + m);
 
     int cnt, ans = 0;
     for (int i = 0; i < n - m + 1; i++) {
         cnt = 0;
-        for (int j = i; j < i + m; j++) {
-            for (int k = 0; k < m; k++)
-                if (a[j] == b[k]) {
-                    cnt++;
-                    break;
-                }
+        int tmp[m] = { a[i], a[i + 1], a[i + 2] };
+        sort(tmp, tmp + m);
+        for (int j = 0; j < m; j++) {
+            if (tmp[j] == b[j])
+                cnt++;
         }
         if (cnt == m)
             ans++;
