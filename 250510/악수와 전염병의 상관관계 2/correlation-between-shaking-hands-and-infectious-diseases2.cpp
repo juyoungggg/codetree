@@ -44,13 +44,19 @@ int main() {
     }
 
     sort(hands, hands + t, compare);
+
     for (int i = 0; i < t; i++) {
-        if (handshakes[hands[i].x - 1] < k) {
+        if (handshakes[hands[i].x - 1] < k && handshakes[hands[i].y - 1] < k) {
+            handshakes[hands[i].x - 1]++;
+            handshakes[hands[i].y - 1]++;
+            devs[hands[i].x - 1] = 1;
+            devs[hands[i].y - 1] = 1;
+        }
+        else if (handshakes[hands[i].x - 1] < k) {
             handshakes[hands[i].x - 1]++;
             devs[hands[i].y - 1] = 1;
-
         }
-        if (handshakes[hands[i].y - 1] < k) {
+        else if (handshakes[hands[i].y - 1] < k) {
             handshakes[hands[i].y - 1]++;
             devs[hands[i].x - 1] = 1;
         }
