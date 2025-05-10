@@ -31,22 +31,15 @@ int main() {
         }
     }
 
-    // for (int i = 0; i < a_time; i++) 
-    //     cout << a[i] << ' ' << b[i] << endl;
-
-    int track[a_time] = {0, };
-    // track의 원소가 0이면 공동 선두, 1이면 a가 선두, -1이면 b가 선두
+    int tmp = 0, cnt = 0;
     for (int i = 1; i < a_time; i++) {
-        if (a[i] > b[i]) track[i] = 1;
-        else if (a[i] == b[i]) track[i] = 0;
-        else if (a[i] < b[i]) track[i] = -1;
+        if (tmp * (a[i] - b[i]) < 0)
+            cnt++;
+
+        if (a[i] != b[i])
+            tmp = a[i] - b[i];
     }
 
-    int cnt = 0;
-    for (int i = 2; i < a_time; i++) 
-        if (a[i] * a[i - 1] < 0)
-            cnt++;
-        
     cout << cnt << endl;
     return 0;
 }
