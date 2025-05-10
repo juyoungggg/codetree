@@ -45,6 +45,10 @@ int main() {
 
     sort(hands, hands + t, compare);
 
+    // 내가 놓치고 있는 부분
+    // 병에 전염되지 않은 상태에서 악수를 할 경우 배열에 변동이 없는게 정상
+    // 전염되지 않은 개발자는
+
     for (int i = 0; i < t; i++) {
         if (devs[hands[i].x - 1] == 1 || devs[hands[i].y - 1] == 1) {
             if (handshakes[hands[i].x - 1] < k && handshakes[hands[i].y - 1] < k) {
