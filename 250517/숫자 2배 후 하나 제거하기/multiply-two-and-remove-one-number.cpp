@@ -14,9 +14,9 @@ int main() {
     int sum, min_sum = INT_MAX;
 
     for (int i = 0; i < n; i++) {
-        sum = 0;
         arr[i] *= 2;
         for (int j = 0; j < n; j++) {
+            sum = 0;
             int tmparr[n - 1];
             int tmp = 0;
             for (int k = 0; k < n; k++)
@@ -25,7 +25,6 @@ int main() {
             
             for (int k = 0; k < n - 2; k++)
                 sum += abs(tmparr[k + 1] - tmparr[k]);
-
             min_sum = sum < min_sum ? sum : min_sum;
         }
         arr[i] /= 2;
