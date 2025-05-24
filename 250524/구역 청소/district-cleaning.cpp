@@ -10,17 +10,17 @@ int main() {
     sum += (b - a) + (d - c);
 
     if (a <= c) {
-        if (c < b)
-            sum -= (b - c);
-        else if (d < b)
+        if (d < b)
             sum -= (d - c);
+        else if (c < b)
+            sum -= (b - c);
     }
 
     else if (c < a) {
-        if (a < d)
-            sum -= (d - a);
-        else if (a < b && b < d)
+        if (a < b && b < d)
             sum -= (b - a);
+        else if (a < d)
+            sum -= (d - a);
     }
 
     cout << sum << endl;
