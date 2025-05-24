@@ -7,20 +7,20 @@ int main() {
     cin >> c >> d;
 
     int sum = 0;
-    sum += (b - a + 1) + (d - c + 1);
+    sum += (b - a) + (d - c);
 
-    if (c <= b) {
-        if (c <= a)
-            sum -= (b - a);
-        else
+    if (a <= c) {
+        if (c < b)
             sum -= (b - c);
+        else if (d < b)
+            sum -= (d - c);
     }
 
-    else if (a <= d) {
-        if (a <= c)
-            sum -= (d - c);
-        else
+    else if (c < a) {
+        if (a < d)
             sum -= (d - a);
+        else if (a < b && b < d)
+            sum -= (b - a);
     }
 
     cout << sum << endl;
