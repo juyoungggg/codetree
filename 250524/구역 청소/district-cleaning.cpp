@@ -1,27 +1,23 @@
 #include <iostream>
+#include <algorithm>
 using namespace std;
+
+bool Intersecting(int a, int b, int c, int d) {
+    if (b < c || d < a)
+        return false;
+    return true;
+}
 
 int main() {
     int a, b, c, d;
-    cin >> a >> b;
-    cin >> c >> d;
+    cin >> a >> b >> c >> d;
 
     int sum = 0;
-    sum += (b - a) + (d - c);
-
-    if (a <= c) {
-        if (d < b)
-            sum -= (d - c);
-        else if (c < b)
-            sum -= (b - c);
-    }
-
-    else if (c < a) {
-        if (a < b && b < d)
-            sum -= (b - a);
-        else if (a < d)
-            sum -= (d - a);
-    }
+    if (Intersecting(a, b, c, d))
+        sum = max(b, d) - min(a, c);
+    
+    else
+        sum = (b - a) + (d - c);
 
     cout << sum << endl;
     return 0;
