@@ -24,7 +24,7 @@ int main() {
             it++;
 
         else if (c == 'D' && it != l.end())
-            l.erase(it);
+            it = l.erase(it);   //*
 
         else if (c == 'P') {
             char nc;
