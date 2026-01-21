@@ -20,8 +20,14 @@ int main() {
 
     for (int i = p - 1; i < m; i++) {
         cnt[sent[i] - 'A'] = -1;
-        if (unread[i] == unread[i - 1])
-            cnt[sent[i - 1] - 'A'] = -1;
+        int j = i - 1;
+        while (unread[i] == unread[j] && j >= 0) {
+            cnt[sent[j] - 'A'] = -1;
+            j--;
+        }
+
+        // if (unread[i] == unread[i - 1])
+        //     cnt[sent[i - 1] - 'A'] = -1;
     }
 
     for (int i = 0; i < n; i++)
