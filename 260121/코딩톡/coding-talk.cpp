@@ -18,8 +18,11 @@ int main() {
     if (unread[p - 1] == 0)
         return 0;
 
-    for (int i = p - 1; i < m; i++) 
+    for (int i = p - 1; i < m; i++) {
         cnt[sent[i] - 'A'] = -1;
+        if (unread[i] == unread[i - 1])
+            cnt[sent[i - 1] - 'A'] = -1;
+    }
 
     for (int i = 0; i < n; i++)
         if (cnt[i] >= 0)
