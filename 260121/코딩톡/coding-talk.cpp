@@ -15,6 +15,9 @@ int main() {
         cnt[sent[i] - 'A']++;
     }
     
+    if (unread[p - 1] == 0)
+        return 0;
+
     for (int i = p - 1; i < m; i++) 
         cnt[sent[i] - 'A'] = -1;
 
