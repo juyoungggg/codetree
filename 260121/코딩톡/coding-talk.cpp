@@ -25,9 +25,6 @@ int main() {
             cnt[sent[j] - 'A'] = -1;
             j--;
         }
-
-        // if (unread[i] == unread[i - 1])
-        //     cnt[sent[i - 1] - 'A'] = -1;
     }
 
     for (int i = 0; i < n; i++)
@@ -37,3 +34,5 @@ int main() {
     cout << endl;
     return 0;
 }
+
+// 145m, 4 attempts
